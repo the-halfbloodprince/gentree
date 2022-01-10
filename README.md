@@ -18,4 +18,12 @@ eg: `npx gentree .`, `npx gentree lib`, `npx gentree src`.
 1. run `gentree <name of the folder>`
 eg: `gentree .`, `gentree lib`, `gentree src`.
 
+#### <u>Ignoring files and folders</u>:
+Add a .gentreeignore file in the directory you're calling it from with a list of files and folders you want to ignore at each line.
+eg:
+```
+node_modules/
+.a_fun_file.txt
+```
+
 **Happy Debugging!**
