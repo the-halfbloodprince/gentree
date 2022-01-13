@@ -14,7 +14,7 @@
   "author": "the-halfbloodprince",
   "license": "ISC",
   "dependencies": {
-    "colors": "^1.4.0",
+    "chalk": "^5.0.0",
     "tree-cli": "^0.6.7"
   },
   "devDependencies": {
