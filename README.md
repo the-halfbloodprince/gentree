@@ -26,4 +26,6 @@ node_modules/
 .a_fun_file.txt
 ```
 
+*IMPORTANT BUG: Count of files and folders in final output also includes files in .gentreeignore*
+
 **Happy Debugging!**

@@ -1,8 +1,8 @@
 #! /usr/bin/env node
 
-const fs = require('fs')
-const path = require('path')
-const chalk = require('chalk')
+import * as fs from 'fs'
+import * as path from 'path'
+import * as chalk from 'chalk'
 
 const HEADING: string = '# Project Structure \n'
 let base: string = process.argv[2]
@@ -19,8 +19,16 @@ if(process.argv.length < 3) {
 }
 
 async function run () {
-    const ignore = fs.readFileSync('.gentreeignore', 'utf8')
-    const ignoreList = ignore.split('\n')
+
+    let ignoreList = []
+
+    try {
+      const ignore = fs.readFileSync('.gentreeignore', 'utf8')
+      ignoreList = ignore.split('\n')
+    } catch(ex) {
+      console.log('No .gentreeignore found')
+    }
+
     const il = []
     ignoreList.forEach(ignore => il.push(ignore.trim()))
 

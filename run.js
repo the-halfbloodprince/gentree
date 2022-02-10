@@ -1,4 +1,5 @@
 #! /usr/bin/env node
+"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -35,9 +36,9 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var fs = require('fs');
-var path = require('path');
-var chalk = require('chalk');
+exports.__esModule = true;
+var fs = require("fs");
+var chalk = require("chalk");
 var HEADING = '# Project Structure \n';
 var base = process.argv[2];
 var codeStart = '\`\`\`\n';
@@ -51,10 +52,16 @@ if (process.argv.length < 3) {
 }
 function run() {
     return __awaiter(this, void 0, void 0, function () {
-        var ignore, ignoreList, il;
+        var ignoreList, ignore, il;
         return __generator(this, function (_a) {
-            ignore = fs.readFileSync('.gentreeignore', 'utf8');
-            ignoreList = ignore.split('\n');
+            ignoreList = [];
+            try {
+                ignore = fs.readFileSync('.gentreeignore', 'utf8');
+                ignoreList = ignore.split('\n');
+            }
+            catch (ex) {
+                console.log('No .gentreeignore found');
+            }
             il = [];
             ignoreList.forEach(function (ignore) { return il.push(ignore.trim()); });
             require('tree-cli')({
