@@ -1,6 +1,6 @@
 {
-  "name": "gentree",
-  "version": "1.0.0",
+  "name": "gentrie",
+  "version": "1.0.1",
   "description": "A tool that generates your folder structure and saves it in a structure.md file.",
   "main": "run.js",
   "scripts": {
